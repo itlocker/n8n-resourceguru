@@ -87,11 +87,4 @@ export class ResourceGuruApi implements ICredentialType {
 			default: true,
 		},
 	];
-
-	// The block below tells how this credential can be tested
-	test: ICredentialTestRequest = {
-		request: {
-			url: 'https://api.resourceguruapp.com/v1/me',
-		},
-	};
 }
