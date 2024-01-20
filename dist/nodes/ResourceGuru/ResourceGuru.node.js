@@ -18,7 +18,7 @@ class ResourceGuru {
             outputs: ['main'],
             credentials: [
                 {
-                    name: 'ResourceGuruApi',
+                    name: 'ResourceGuruOAuth2Api',
                     required: true,
                 },
             ],
@@ -40,55 +40,46 @@ class ResourceGuru {
                     noDataExpression: true,
                     options: [
                         {
-                            name: 'Projects',
-                            value: 'projects',
+                            name: 'Project',
+                            value: 'project',
                         },
                         {
-                            name: 'Clients',
-                            value: 'clients',
+                            name: 'Client',
+                            value: 'client',
                         },
                     ],
-                    default: 'projects',
+                    default: 'project',
                 },
                 {
                     displayName: 'Operation',
                     name: 'operation',
                     type: 'options',
-                    noDataExpression: false,
+                    noDataExpression: true,
                     displayOptions: {
                         show: {
-                            resource: ['projects'],
+                            resource: ['project'],
                         },
                     },
                     options: [
                         {
-                            name: 'Get Active',
-                            value: 'getActive',
-                            action: 'get active projects',
-                            description: 'Get Active Projects',
+                            name: 'Archive',
+                            value: 'archive',
+                            action: 'Archive a project',
+                            description: 'Archive a Project',
                             routing: {
                                 request: {
-                                    method: 'GET',
-                                    url: '/projects',
-                                },
-                            },
-                        },
-                        {
-                            name: 'Get Archived',
-                            value: 'getArchived',
-                            action: 'get archived projects',
-                            description: 'Get Archived Projects',
-                            routing: {
-                                request: {
-                                    method: 'GET',
-                                    url: '/projects/archived',
+                                    method: 'PUT',
+                                    url: '=/projects/{{$parameter.projectId}}',
+                                    body: {
+                                        archived: true,
+                                    },
                                 },
                             },
                         },
                         {
                             name: 'Create',
                             value: 'create',
-                            action: 'create a project',
+                            action: 'Create a project',
                             description: 'Create a Project',
                             routing: {
                                 request: {
@@ -104,24 +95,33 @@ class ResourceGuru {
                             },
                         },
                         {
-                            name: 'Archive',
-                            value: 'archive',
-                            action: 'archive a project',
-                            description: 'Archive a Project',
+                            name: 'Get Active',
+                            value: 'getActive',
+                            action: 'Get active projects',
+                            description: 'Get Active Projects',
                             routing: {
                                 request: {
-                                    method: 'PUT',
-                                    url: '=/projects/{{$parameter.projectId}}',
-                                    body: {
-                                        archived: true,
-                                    },
+                                    method: 'GET',
+                                    url: '/projects',
+                                },
+                            },
+                        },
+                        {
+                            name: 'Get Archived',
+                            value: 'getArchived',
+                            action: 'Get archived projects',
+                            description: 'Get Archived Projects',
+                            routing: {
+                                request: {
+                                    method: 'GET',
+                                    url: '/projects/archived',
                                 },
                             },
                         },
                         {
                             name: 'Unarchive',
                             value: 'unarchive',
-                            action: 'unarchive a project',
+                            action: 'Unarchive a project',
                             description: 'Unarchive a Project',
                             routing: {
                                 request: {
@@ -134,47 +134,38 @@ class ResourceGuru {
                             },
                         },
                     ],
-                    default: 'get',
+                    default: 'getActive',
                 },
                 {
                     displayName: 'Operation',
                     name: 'operation',
                     type: 'options',
-                    noDataExpression: false,
+                    noDataExpression: true,
                     displayOptions: {
                         show: {
-                            resource: ['clients'],
+                            resource: ['client'],
                         },
                     },
                     options: [
                         {
-                            name: 'Get Active',
-                            value: 'getActive',
-                            action: 'get active clients',
-                            description: 'Get Active Clients',
+                            name: 'Archive',
+                            value: 'archive',
+                            action: 'Archive a client',
+                            description: 'Archive a Client',
                             routing: {
                                 request: {
-                                    method: 'GET',
-                                    url: '/clients',
-                                },
-                            },
-                        },
-                        {
-                            name: 'Get Archived',
-                            value: 'getArchived',
-                            action: 'get archived clients',
-                            description: 'Get Archived Clients',
-                            routing: {
-                                request: {
-                                    method: 'GET',
-                                    url: '/clients/archived',
+                                    method: 'PUT',
+                                    url: '=/clients/{{$parameter.projectId}}',
+                                    body: {
+                                        archived: true,
+                                    },
                                 },
                             },
                         },
                         {
                             name: 'Create',
                             value: 'create',
-                            action: 'create a client',
+                            action: 'Create a client',
                             description: 'Create a Client',
                             routing: {
                                 request: {
@@ -188,24 +179,33 @@ class ResourceGuru {
                             },
                         },
                         {
-                            name: 'Archive',
-                            value: 'archive',
-                            action: 'archive a Client',
-                            description: 'Archive a Client',
+                            name: 'Get Active',
+                            value: 'getActive',
+                            action: 'Get active clients',
+                            description: 'Get Active Clients',
                             routing: {
                                 request: {
-                                    method: 'PUT',
-                                    url: '=/clients/{{$parameter.projectId}}',
-                                    body: {
-                                        archived: true,
-                                    },
+                                    method: 'GET',
+                                    url: '/clients',
+                                },
+                            },
+                        },
+                        {
+                            name: 'Get Archived',
+                            value: 'getArchived',
+                            action: 'Get archived clients',
+                            description: 'Get Archived Clients',
+                            routing: {
+                                request: {
+                                    method: 'GET',
+                                    url: '/clients/archived',
                                 },
                             },
                         },
                         {
                             name: 'Unarchive',
                             value: 'unarchive',
-                            action: 'unarchive a client',
+                            action: 'Unarchive a client',
                             description: 'Unarchive a Client',
                             routing: {
                                 request: {
@@ -218,7 +218,7 @@ class ResourceGuru {
                             },
                         },
                     ],
-                    default: 'get',
+                    default: 'getActive',
                 },
                 {
                     displayName: 'Project ID',
@@ -228,7 +228,7 @@ class ResourceGuru {
                     placeholder: 'Project ID',
                     displayOptions: {
                         show: {
-                            resource: ['projects'],
+                            resource: ['project'],
                             operation: ['archive', 'unarchive'],
                         },
                     },
@@ -242,7 +242,7 @@ class ResourceGuru {
                     placeholder: 'Name',
                     displayOptions: {
                         show: {
-                            resource: ['projects', 'clients'],
+                            resource: ['project', 'client'],
                             operation: ['create'],
                         },
                     },
@@ -252,11 +252,10 @@ class ResourceGuru {
                     displayName: 'Project Code',
                     name: 'projectCode',
                     type: 'string',
-                    required: false,
                     placeholder: 'Project Code',
                     displayOptions: {
                         show: {
-                            resource: ['projects'],
+                            resource: ['project'],
                             operation: ['create'],
                         },
                     },
@@ -270,7 +269,7 @@ class ResourceGuru {
                     placeholder: 'Client ID',
                     displayOptions: {
                         show: {
-                            resource: ['projects'],
+                            resource: ['project'],
                             operation: ['create'],
                         },
                     },
@@ -284,7 +283,7 @@ class ResourceGuru {
                     placeholder: 'Client ID',
                     displayOptions: {
                         show: {
-                            resource: ['clients'],
+                            resource: ['client'],
                             operation: ['archive', 'unarchive'],
                         },
                     },
@@ -294,11 +293,10 @@ class ResourceGuru {
                     displayName: 'Notes',
                     name: 'notes',
                     type: 'string',
-                    required: false,
                     placeholder: 'Notes',
                     displayOptions: {
                         show: {
-                            resource: ['projects', 'clients'],
+                            resource: ['project', 'client'],
                             operation: ['create'],
                         },
                     },

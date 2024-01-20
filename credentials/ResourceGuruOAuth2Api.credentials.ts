@@ -1,13 +1,13 @@
-import type { ICredentialType, INodeProperties, ICredentialTestRequest } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'n8n-workflow';
 
-export class ResourceGuruApi implements ICredentialType {
-	name = 'ResourceGuruApi';
+export class ResourceGuruOAuth2Api implements ICredentialType {
+	name = 'resourceGuruOAuth2Api';
 
-	displayName = 'Resource Guru API';
+	displayName = 'Resource Guru OAuth2 API';
 
 	extends = ['oAuth2Api'];
 
-	documentationUrl = 'httpRequest';
+	documentationUrl = 'https://github.com/itlocker/n8n-resourceguru/blob/master/README.md';
 
 	properties: INodeProperties[] = [
 		{

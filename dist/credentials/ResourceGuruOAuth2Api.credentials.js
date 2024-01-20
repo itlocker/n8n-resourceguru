@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResourceGuruApi = void 0;
-class ResourceGuruApi {
+exports.ResourceGuruOAuth2Api = void 0;
+class ResourceGuruOAuth2Api {
     constructor() {
-        this.name = 'resourceGuruApi';
-        this.displayName = 'Resource Guru API';
+        this.name = 'resourceGuruOAuth2Api';
+        this.displayName = 'Resource Guru OAuth2 API';
         this.extends = ['oAuth2Api'];
         this.documentationUrl = 'https://github.com/itlocker/n8n-resourceguru/blob/master/README.md';
         this.properties = [
@@ -86,5 +86,5 @@ class ResourceGuruApi {
         ];
     }
 }
-exports.ResourceGuruApi = ResourceGuruApi;
-//# sourceMappingURL=ResourceGuruApi.credentials.js.map
+exports.ResourceGuruOAuth2Api = ResourceGuruOAuth2Api;
+//# sourceMappingURL=ResourceGuruOAuth2Api.credentials.js.map
