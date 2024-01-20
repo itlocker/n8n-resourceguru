@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties, ICredentialTestRequest } from 'n8n-workflow';
 
 export class ResourceGuruApi implements ICredentialType {
 	name = 'ResourceGuruApi';
@@ -87,4 +87,11 @@ export class ResourceGuruApi implements ICredentialType {
 			default: true,
 		},
 	];
+
+	// The block below tells how this credential can be tested
+	test: ICredentialTestRequest = {
+		request: {
+			url: 'https://api.resourceguruapp.com/v1/me',
+		},
+	};
 }

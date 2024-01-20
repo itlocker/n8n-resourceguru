@@ -84,6 +84,11 @@ class ResourceGuruApi {
                 default: true,
             },
         ];
+        this.test = {
+            request: {
+                url: 'https://api.resourceguruapp.com/v1/me',
+            },
+        };
     }
 }
 exports.ResourceGuruApi = ResourceGuruApi;
