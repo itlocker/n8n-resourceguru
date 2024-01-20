@@ -9,17 +9,17 @@ This repo contains a node which will provide access to Resource Guru.
 The Resource Guru node implements the following actions &amp; operations:
 
 - Client
-- - Get Active Clients
-- - Get Archived Clients
-- - Create Client
-- - Archive Client
-- - Unarchive Client
+  - Get Active Clients
+  - Get Archived Clients
+  - Create Client
+  - Archive Client
+  - Unarchive Client
 - Project
-- - Get Active Projects
-- - Get Archived Projects
-- - Create Project
-- - Archive Project
-- - Unarchive Project
+  - Get Active Projects
+  - Get Archived Projects
+  - Create Project
+  - Archive Project
+  - Unarchive Project
 
 For more information [visit the Resource Guru developer site](https://resourceguruapp.com/docs/api)
 
