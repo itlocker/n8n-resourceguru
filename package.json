@@ -1,6 +1,6 @@
 {
 	"name": "@itlocker/n8n-nodes-resourceguru",
-	"version": "0.2.0",
+	"version": "0.2.5",
 	"description": "n8n node - Resource Guru",
 	"keywords": [
 		"n8n-community-node-package"
@@ -30,7 +30,7 @@
 	"n8n": {
 		"n8nNodesApiVersion": 1,
 		"credentials": [
-			"dist/credentials/ResourceGuruApi.credentials.js"
+			"dist/credentials/ResourceGuruOAuth2Api.credentials.js"
 		],
 		"nodes": [
 			"dist/nodes/ResourceGuru/ResourceGuru.node.js"

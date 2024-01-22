@@ -95,6 +95,21 @@ class ResourceGuru {
                             },
                         },
                         {
+                            name: 'Get',
+                            value: 'get',
+                            action: 'Get all projects',
+                            description: 'Get All Projects',
+                            routing: {
+                                request: {
+                                    method: 'GET',
+                                    url: '/projects',
+                                    qs: {
+                                        includeArchived: '1',
+                                    },
+                                },
+                            },
+                        },
+                        {
                             name: 'Get Active',
                             value: 'getActive',
                             action: 'Get active projects',
@@ -174,6 +189,21 @@ class ResourceGuru {
                                     body: {
                                         name: '={{$parameter.name}}',
                                         notes: '={{$parameter.notes}}',
+                                    },
+                                },
+                            },
+                        },
+                        {
+                            name: 'Get',
+                            value: 'get',
+                            action: 'Get all clients',
+                            description: 'Get All Clients',
+                            routing: {
+                                request: {
+                                    method: 'GET',
+                                    url: '/clients',
+                                    qs: {
+                                        includeArchived: '1',
                                     },
                                 },
                             },
