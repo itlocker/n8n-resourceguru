@@ -170,7 +170,7 @@ class ResourceGuru {
                             routing: {
                                 request: {
                                     method: 'PUT',
-                                    url: '=/clients/{{$parameter.projectId}}',
+                                    url: '={{"/clients/" + $parameter.clientId}}',
                                     body: {
                                         archived: true,
                                     },
@@ -240,7 +240,7 @@ class ResourceGuru {
                             routing: {
                                 request: {
                                     method: 'PUT',
-                                    url: '=/clients/{{$parameter.projectId}}',
+                                    url: '=/clients/{{$parameter.clientId}}',
                                     body: {
                                         archived: false,
                                     },
@@ -294,27 +294,13 @@ class ResourceGuru {
                 {
                     displayName: 'Client ID',
                     name: 'clientId',
-                    type: 'string',
+                    type: 'number',
                     required: true,
                     placeholder: 'Client ID',
                     displayOptions: {
                         show: {
-                            resource: ['project'],
-                            operation: ['create'],
-                        },
-                    },
-                    default: '',
-                },
-                {
-                    displayName: 'Client ID',
-                    name: 'clientId',
-                    type: 'string',
-                    required: true,
-                    placeholder: 'Client ID',
-                    displayOptions: {
-                        show: {
-                            resource: ['client'],
-                            operation: ['archive', 'unarchive'],
+                            resource: ['project', 'client'],
+                            operation: ['create', 'archive', 'unarchive'],
                         },
                     },
                     default: '',

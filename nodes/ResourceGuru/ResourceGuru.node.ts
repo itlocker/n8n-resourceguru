@@ -175,7 +175,7 @@ export class ResourceGuru implements INodeType {
 						routing: {
 							request: {
 								method: 'PUT',
-								url: '=/clients/{{$parameter.clientId}}',
+								url: '={{"/clients/" + $parameter.clientId}}',
 								body: {
 									archived: true,
 								},
@@ -301,27 +301,13 @@ export class ResourceGuru implements INodeType {
 			{
 				displayName: 'Client ID',
 				name: 'clientId',
-				type: 'string',
+				type: 'number',
 				required: true,
 				placeholder: 'Client ID',
 				displayOptions: {
 					show: {
-						resource: ['project'],
-						operation: ['create'],
-					},
-				},
-				default: '',
-			},
-			{
-				displayName: 'Client ID',
-				name: 'clientId',
-				type: 'string',
-				required: true,
-				placeholder: 'Client ID',
-				displayOptions: {
-					show: {
-						resource: ['client'],
-						operation: ['archive', 'unarchive'],
+						resource: ['project', 'client'],
+						operation: ['create', 'archive', 'unarchive'],
 					},
 				},
 				default: '',
