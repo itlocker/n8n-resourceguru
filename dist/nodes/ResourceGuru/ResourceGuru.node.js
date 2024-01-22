@@ -88,7 +88,7 @@ class ResourceGuru {
                                     body: {
                                         name: '={{$parameter.name}}',
                                         project_code: '={{$parameter.projectCode}}',
-                                        client_id: '={{$parameter.clientId}}',
+                                        client_id: '={{$parameter.projectClientId}}',
                                         notes: '={{$parameter.notes}}',
                                     },
                                 },
@@ -299,8 +299,22 @@ class ResourceGuru {
                     placeholder: 'Client ID',
                     displayOptions: {
                         show: {
-                            resource: ['project', 'client'],
-                            operation: ['create', 'archive', 'unarchive'],
+                            resource: ['client'],
+                            operation: ['archive', 'unarchive'],
+                        },
+                    },
+                    default: '',
+                },
+                {
+                    displayName: 'Client ID',
+                    name: 'projectClientId',
+                    type: 'number',
+                    required: true,
+                    placeholder: 'Client ID',
+                    displayOptions: {
+                        show: {
+                            resource: ['project'],
+                            operation: ['create'],
                         },
                     },
                     default: '',
