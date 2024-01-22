@@ -175,7 +175,7 @@ export class ResourceGuru implements INodeType {
 						routing: {
 							request: {
 								method: 'PUT',
-								url: '=/clients/{{$parameter.projectId}}',
+								url: '=/clients/{{$parameter.clientId}}',
 								body: {
 									archived: true,
 								},
@@ -245,7 +245,7 @@ export class ResourceGuru implements INodeType {
 						routing: {
 							request: {
 								method: 'PUT',
-								url: '=/clients/{{$parameter.projectId}}',
+								url: '=/clients/{{$parameter.clientId}}',
 								body: {
 									archived: false,
 								},
