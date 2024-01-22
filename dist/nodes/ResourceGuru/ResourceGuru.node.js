@@ -5,7 +5,7 @@ class ResourceGuru {
     constructor() {
         this.description = {
             displayName: 'Resource Guru',
-            name: 'ResourceGuru',
+            name: 'resourceGuru',
             icon: 'file:resourceguru.svg',
             group: ['transform'],
             version: 1,
@@ -18,7 +18,7 @@ class ResourceGuru {
             outputs: ['main'],
             credentials: [
                 {
-                    name: 'ResourceGuruOAuth2Api',
+                    name: 'resourceGuruOAuth2Api',
                     required: true,
                 },
             ],

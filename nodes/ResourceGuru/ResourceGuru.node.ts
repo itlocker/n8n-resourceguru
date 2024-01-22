@@ -4,7 +4,7 @@ export class ResourceGuru implements INodeType {
 	description: INodeTypeDescription = {
 		// Basic node details will go here
 		displayName: 'Resource Guru',
-		name: 'ResourceGuru',
+		name: 'resourceGuru',
 		icon: 'file:resourceguru.svg',
 		group: ['transform'],
 		version: 1,
@@ -17,7 +17,7 @@ export class ResourceGuru implements INodeType {
 		outputs: ['main'],
 		credentials: [
 			{
-				name: 'ResourceGuruOAuth2Api',
+				name: 'resourceGuruOAuth2Api',
 				required: true,
 			},
 		],
